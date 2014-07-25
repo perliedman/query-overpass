@@ -1,0 +1,25 @@
+{
+  "name": "query-overpass",
+  "version": "0.0.1",
+  "description": "Make queries to OpenStreetMap's overpass API and output as GeoJSON",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "query-overpass": "cli.js"
+  },
+  "keywords": [
+    "osm",
+    "overpass",
+    "geojson"
+  ],
+  "author": "Per Liedman <per@liedman.net>",
+  "license": "ISC",
+  "dependencies": {
+    "concat-stream": "^1.4.6",
+    "minimist": "^0.1.0",
+    "osmtogeojson": "^2.0.5",
+    "request": "^2.36.0"
+  }
+}
