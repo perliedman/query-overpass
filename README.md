@@ -17,6 +17,11 @@ Optionally, a file containing the query can be passed as the first argument:
 
     $ query-overpass query.ql
 
+Goes well together with other command line tools, like for example [geojsonio-cli](https://github.com/mapbox/geojsonio-cli):
+
+    $ npm install -g geojsonio-cli
+    $ echo '[out:json];node(57.7,11.9,57.8,12.0)[amenity=bar];out;' | query-overpass | geojsonio
+
 ## usage
 
 Installation is easy with npm:
