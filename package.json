@@ -2,6 +2,7 @@
   "name": "query-overpass",
   "version": "0.0.1",
   "description": "Make queries to OpenStreetMap's overpass API and output as GeoJSON",
+  "repository": "git@github.com:perliedman/query-overpass.git",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
