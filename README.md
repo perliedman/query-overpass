@@ -7,26 +7,36 @@ Make queries to [OpenStreetMap](http://www.openstreetmap.org/)'s [overpass API](
 
 install:
 
-    $ npm install -g query-overpass
+```bash
+$ npm install -g query-overpass
+```
 
 use:
 
-    $ echo '[out:json];node(57.7,11.9,57.8,12.0)[amenity=bar];out;' | query-overpass
+```bash
+$ echo '[out:json];node(57.7,11.9,57.8,12.0)[amenity=bar];out;' | query-overpass
+```
 
 Optionally, a file containing the query can be passed as the first argument:
 
-    $ query-overpass query.ql
+```bash
+$ query-overpass query.ql
+```
 
 Goes well together with other command line tools, like for example [geojsonio-cli](https://github.com/mapbox/geojsonio-cli):
 
-    $ npm install -g geojsonio-cli
-    $ echo '[out:json];node(57.7,11.9,57.8,12.0)[amenity=bar];out;' | query-overpass | geojsonio
+```bash
+$ npm install -g geojsonio-cli
+$ echo '[out:json];node(57.7,11.9,57.8,12.0)[amenity=bar];out;' | query-overpass | geojsonio
+```
 
 ## usage
 
 Installation is easy with npm:
 
-    npm install query-overpass
+```bash
+$ npm install query-overpass
+```
 
 ## api
 
@@ -36,7 +46,9 @@ query-overpass exports a single function:
 
 Performs the provided query and calls the callback when done. The callback is of the form
 
-    callback(error, data)
+```javascript
+callback(error, data)
+```
 
 Where error is an object containing `message` and `statusCode` if an error occured, or `undefined` if
 no error occured. `data` will be the query response as an GeoJSON object.
