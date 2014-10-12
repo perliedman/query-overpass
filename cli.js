@@ -13,6 +13,8 @@ function openData(s) {
         } else {
             console.log(err);
         }
+    }, {
+        overpassUrl: argv['overpass-url']
     });
 }
 

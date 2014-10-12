@@ -30,6 +30,14 @@ $ npm install -g geojsonio-cli
 $ echo '[out:json];node(57.7,11.9,57.8,12.0)[amenity=bar];out;' | query-overpass | geojsonio
 ```
 
+You can also provide the URL where the Overpass API is located:
+
+```bash
+$ query-overpass --overpass-url http://my.overpass-provider.org/
+```
+
+The default is to use `http://overpass-api.de/api/interpreter`.
+
 ## usage
 
 Installation is easy with npm:
@@ -42,7 +50,7 @@ $ npm install query-overpass
 
 query-overpass exports a single function:
 
-### query_overpass(query, callback)
+### query_overpass(query, callback, options)
 
 Performs the provided query and calls the callback when done. The callback is of the form
 
@@ -52,3 +60,5 @@ callback(error, data)
 
 Where error is an object containing `message` and `statusCode` if an error occured, or `undefined` if
 no error occured. `data` will be the query response as an GeoJSON object.
+
+The only option supported at the moment is `overpassUrl`, which will default to `'http://overpass-api.de/api/interpreter'` unless specified.

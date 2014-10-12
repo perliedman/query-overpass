@@ -1,8 +1,9 @@
 var osmtogeojson = require('osmtogeojson'),
     request = require('request');
 
-module.exports = function(query, cb) {
-    request.post('http://overpass-api.de/api/interpreter', function (error, response, body) {
+module.exports = function(query, cb, options) {
+    options = options || {};
+    request.post(options.overpassUrl || 'http://overpass-api.de/api/interpreter', function (error, response, body) {
         var geojson;
 
         if (!error && response.statusCode === 200) {
