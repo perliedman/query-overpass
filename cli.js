@@ -14,7 +14,8 @@ function openData(s) {
             console.log(err);
         }
     }, {
-        overpassUrl: argv['overpass-url']
+        overpassUrl: argv['overpass-url'],
+        flatProperties: argv['flat-properties']
     });
 }
 
