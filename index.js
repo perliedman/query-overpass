@@ -8,7 +8,7 @@ module.exports = function(query, cb, options) {
 
         if (!error && response.statusCode === 200) {
             geojson = osmtogeojson(JSON.parse(body), {
-                flatProperties: (options.flatProperties != undefined && options.flatProperties.toLowerCase() == 'true' ? true: false)
+                flatProperties: options.flatProperties
             });
             cb(undefined, geojson);
         } else if (error) {

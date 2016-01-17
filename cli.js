@@ -1,7 +1,13 @@
 #!/usr/bin/env node
 
 var concat = require('concat-stream'),
-    argv = require('minimist')(process.argv.slice(2)),
+    argv = require('minimist')(process.argv.slice(2), {
+        string: 'overpass-url',
+        boolean: 'flat-properties',
+        default: {
+            'flat-properties': false
+        }
+    }),
     fs = require('fs'),
     overpass = require('./');
 

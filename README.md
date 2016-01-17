@@ -48,12 +48,10 @@ The default is to use `http://overpass-api.de/api/interpreter`.
 You can also flatten each GeoJSON feature, making it more easily processable by other software and tools
 
 ```bash
-$ query-overpass --flat-properties true
+$ query-overpass --flat-properties
 ```
 
-The default is to use `false` to keep the same behaviour as previous version.
-
-Any other string than `true` (case insensitive) provided to `--flat-properties` will make the command use `false`.
+The default behaviour, without adding `--flat-properties` is to use `false` to be consistent with previous version.
 
 ## usage
 
@@ -78,7 +76,4 @@ callback(error, data)
 Where error is an object containing `message` and `statusCode` if an error occured, or `undefined` if
 no error occured. `data` will be the query response as an GeoJSON object.
 
-The options supported at the moment are:
-
-* `overpassUrl`, which will default to `'http://overpass-api.de/api/interpreter'` unless specified.
-* `flatProperties`, which will default to `false` unless specified to `true`.
+The only option supported at the moment is `overpassUrl`, which will default to `'http://overpass-api.de/api/interpreter'` unless specified.
