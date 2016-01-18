@@ -45,6 +45,14 @@ $ query-overpass --overpass-url http://my.overpass-provider.org/
 
 The default is to use `http://overpass-api.de/api/interpreter`.
 
+You can also flatten each GeoJSON feature, making it more easily processable by other software and tools
+
+```bash
+$ query-overpass --flat-properties
+```
+
+The default behaviour, without adding `--flat-properties` is to use `false` to be consistent with previous version.
+
 ## usage
 
 Installation is easy with npm:
@@ -68,4 +76,7 @@ callback(error, data)
 Where error is an object containing `message` and `statusCode` if an error occured, or `undefined` if
 no error occured. `data` will be the query response as an GeoJSON object.
 
-The only option supported at the moment is `overpassUrl`, which will default to `'http://overpass-api.de/api/interpreter'` unless specified.
+The options supported at the moment are
+
+* `overpassUrl`, which will default to `'http://overpass-api.de/api/interpreter'` unless specified.
+* `flatProperties` which will default to `false`.
