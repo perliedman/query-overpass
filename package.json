@@ -5,7 +5,7 @@
   "repository": "git@github.com:perliedman/query-overpass.git",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape test/*.js | faucet"
   },
   "bin": {
     "query-overpass": "cli.js"
@@ -22,5 +22,9 @@
     "minimist": "^0.1.0",
     "osmtogeojson": "^2.0.5",
     "request": "^2.36.0"
+  },
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "tape": "^4.4.0"
   }
 }
