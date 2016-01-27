@@ -21,6 +21,6 @@
     "concat-stream": "^1.4.6",
     "minimist": "^0.1.0",
     "osmtogeojson": "^2.0.5",
-    "request": "^2.36.0"
+    "request": "^2.68.0"
   }
 }
