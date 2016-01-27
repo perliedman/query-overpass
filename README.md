@@ -6,7 +6,7 @@ I strongly believe that it is my &mdash; and your &mdash; duty to make the open 
 
 While I can't force anyone to do anything, if you happen to disagree with this, I ask of you not to use any of the open source I have published. Nor am I interested in contributions from people who can't accept or act respectfully towards other humans regardless of gender identity, sexual orientation, disability, ethnicity, religion, age, physical appearance, body size, race, or similar personal characteristics. If you think feminism, anti-racism or the LGBT movement is somehow wrong, disturbing or irrelevant, I ask you to go elsewhere to find software.
 
-# query-overpass [![NPM version](https://badge.fury.io/js/query-overpass.svg)](http://badge.fury.io/js/query-overpass)
+# query-overpass [![NPM version](https://badge.fury.io/js/query-overpass.svg)](http://badge.fury.io/js/query-overpass) [![Build Status](https://travis-ci.org/perliedman/query-overpass.svg?branch=master)](https://travis-ci.org/perliedman/query-overpass)
 
 Make queries to [OpenStreetMap](http://www.openstreetmap.org/)'s [overpass API](http://wiki.openstreetmap.org/wiki/Overpass_API) and output as [GeoJSON](http://geojson.org/).
 
