@@ -20,7 +20,7 @@
   "dependencies": {
     "concat-stream": "^1.4.6",
     "minimist": "^0.1.0",
-    "osmtogeojson": "^2.0.5",
+    "osmtogeojson": "^2.2.12",
     "request": "^2.69.0"
   },
   "devDependencies": {
