@@ -17,7 +17,8 @@ function openData(s) {
         if (!err) {
             console.log(JSON.stringify(geojson));
         } else {
-            console.log(err);
+            console.error(err);
+            process.exit(1);
         }
     }, {
         overpassUrl: argv['overpass-url'],
