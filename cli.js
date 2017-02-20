@@ -4,12 +4,16 @@ var concat = require('concat-stream'),
     argv = require('minimist')(process.argv.slice(2), {
         string: 'overpass-url',
         boolean: 'flat-properties',
+        boolean: 'version',
         default: {
             'flat-properties': false
         }
     }),
     fs = require('fs'),
     overpass = require('./');
+
+if (argv['version'])
+  return process.stdout.write(require('./package.json').version+'\n');
 
 function openData(s) {
     var query = s.toString();
