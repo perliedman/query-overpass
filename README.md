@@ -1,5 +1,7 @@
 ## A few words on diversity in tech
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/perliedman/query-overpass.svg)](https://greenkeeper.io/)
+
 I need to take some of your time. I can't believe we let shit like [the Kathy Sierra incident](http://www.wired.com/2014/10/trolls-will-always-win/) or [what happened to Brianna Wu](https://twitter.com/Spacekatgal/status/520739878993420290) happen over and over again. I can't believe we, the open source community, let [sexist, misogynous shit happen over and over again](http://geekfeminism.wikia.com/wiki/Timeline_of_incidents).
 
 I strongly believe that it is my &mdash; and your &mdash; duty to make the open source community, as well as the tech community at large, a community where everyone feel welcome and is accepted. At the very minimum, that means making sure the community and its forums both _are_ safe, and are perceived as safe. It means being friendly and inclusive, even when you disagree with people. It means not shrugging off discussions about sexism and inclusiveness with [handwaving about censorship and free speech](https://josm.openstreetmap.de/ticket/10568). For a more elaborate document on what that means, [the NPM Code of Conduct](http://www.npmjs.com/policies/conduct) is a good start, [Geek Feminism's resources for allies](http://geekfeminism.wikia.com/wiki/Resources_for_allies) contains much more.
