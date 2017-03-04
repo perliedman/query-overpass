@@ -2,7 +2,7 @@ var test = require('tape'),
     queryOverpass = require('../');
 
 test('can execute basic query', function(t) {
-    queryOverpass('[out:json];node(57.7,11.9,57.8,12.0)[amenity=bar];out;', function(err, geojson) {
+    var req = queryOverpass('[out:json];node(57.7,11.9,57.8,12.0)[amenity=bar];out;', function(err, geojson) {
         if (err) {
             return t.fail(err);
         }
@@ -13,6 +13,9 @@ test('can execute basic query', function(t) {
 
         var f = geojson.features[0];
         t.ok(f.properties && f.properties.tags, 'Properties are not flattened');
+
+        t.ok(req.path, 'Should return request object');
+
         t.end();
     });
 });

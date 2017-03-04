@@ -3,7 +3,7 @@ var osmtogeojson = require('osmtogeojson'),
 
 module.exports = function(query, cb, options) {
     options = options || {};
-    request.post(options.overpassUrl || 'http://overpass-api.de/api/interpreter', function (error, response, body) {
+    return request.post(options.overpassUrl || 'http://overpass-api.de/api/interpreter', function (error, response, body) {
         var geojson;
 
         if (!error && response.statusCode === 200) {
