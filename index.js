@@ -5,6 +5,9 @@ var osmtogeojson = require('osmtogeojson'),
 module.exports = function(query, cb, options) {
     options = options || {};
     var reqOptions = {
+        headers: {
+            'content-type': 'application/x-www-form-urlencoded'
+        },
         body: querystring.stringify({ data: query })
     };
     return request.post(options.overpassUrl || 'http://overpass-api.de/api/interpreter', reqOptions, function (error, response, body) {
