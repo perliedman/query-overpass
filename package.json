@@ -7,6 +7,9 @@
   "scripts": {
     "test": "tape test/*.js | faucet"
   },
+  "browser": {
+    "request": "xhr"
+  },
   "bin": {
     "query-overpass": "cli.js"
   },
@@ -21,7 +24,8 @@
     "concat-stream": "^1.6.0",
     "minimist": "^1.2.0",
     "osmtogeojson": "^2.2.12",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "xhr": "^2.4.0"
   },
   "devDependencies": {
     "faucet": "0.0.1",

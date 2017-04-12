@@ -1,9 +1,16 @@
 var osmtogeojson = require('osmtogeojson'),
+    querystring = require('querystring'),
     request = require('request');
 
 module.exports = function(query, cb, options) {
     options = options || {};
-    return request.post(options.overpassUrl || 'http://overpass-api.de/api/interpreter', function (error, response, body) {
+    var reqOptions = {
+        headers: {
+            'content-type': 'application/x-www-form-urlencoded'
+        },
+        body: querystring.stringify({ data: query })
+    };
+    return request.post(options.overpassUrl || 'http://overpass-api.de/api/interpreter', reqOptions, function (error, response, body) {
         var geojson;
 
         if (!error && response.statusCode === 200) {
@@ -23,7 +30,5 @@ module.exports = function(query, cb, options) {
                 message: 'Unknown error.',
             });
         }
-    }).form({
-        data: query
     });
 };
