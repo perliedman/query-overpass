@@ -12,8 +12,10 @@ var concat = require('concat-stream'),
     fs = require('fs'),
     overpass = require('./');
 
-if (argv['version'])
-  return process.stdout.write(require('./package.json').version+'\n');
+if (argv['version']) {
+    process.stdout.write(require('./package.json').version+'\n');
+    process.exit(0);
+}
 
 function openData(s) {
     var query = s.toString();
