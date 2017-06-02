@@ -2,12 +2,14 @@ var osmtogeojson = require('osmtogeojson'),
     querystring = require('querystring'),
     request = require('request'),
     concat = require('concat-stream'),
-    JSONStream = require('JSONStream');
+    JSONStream = require('JSONStream'),
+    xmldom = require('xmldom')
 
 module.exports = function(query, cb, options) {
+    var contentType;
     options = options || {};
 
-    var handleJson = function(data) {
+    var toGeoJSON = function(data) {
         var geojson;
 
         geojson = osmtogeojson(data, {
@@ -15,6 +17,12 @@ module.exports = function(query, cb, options) {
         });
         cb(undefined, geojson);
     };
+
+    var handleXml = function (data) {
+        var parser = new xmldom.DOMParser();
+        var doc = parser.parseFromString(data);
+        toGeoJSON(doc);
+    }
 
     var reqOptions = {
         headers: {
@@ -33,30 +41,22 @@ module.exports = function(query, cb, options) {
                     statusCode: response.statusCode
                 });
             }
+            contentType = response.headers['content-type'];
+
+            if (contentType.indexOf('json') >= 0) {
+                r.pipe(JSONStream.parse())
+                    .on('data', toGeoJSON)
+                    .on('error', cb);
+            } else if (contentType.indexOf('xml') >= 0) {
+                var body = '';
+                r.on('data', function (chunk) { body += chunk; })
+                    .on('end', function() { handleXml(body); });
+            } else {
+                cb({
+                    message: 'Unknown Content-Type "' + contentType + '" in response'
+                });
+            }
         })
-        .pipe(JSONStream.parse())
-        .on('data', handleJson)
-        .on('error', cb);
-    // var r = request.post(options.overpassUrl || 'http://overpass-api.de/api/interpreter', reqOptions)
-    //     .on('response', function (response) {
-    //         if (response.statusCode === 200) {
-    //             var contentLength = response.headers['content-length'];
-    //             if (!contentLength || contentLength >= 256 * 1024) {
-    //                 r.pipe(JSONStream.parse())
-    //                     .on('root', handleJson);
-    //             } else {
-    //                 r.pipe(concat(function(body) {
-    //                     handleJson(JSON.parse(body));
-    //                 }));
-    //             }
-    //         } else {
-    //             cb({
-    //                 message: 'Request failed: HTTP ' + response.statusCode,
-    //                 statusCode: response.statusCode
-    //             });
-    //         }
-    //     })
-    //     .on('error', cb);
 
     return r;
 };
