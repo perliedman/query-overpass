@@ -8,7 +8,9 @@
     "test": "tape test/*.js | faucet"
   },
   "browser": {
-    "request": "xhr"
+    "request": "xhr",
+    "JSONStream": false,
+    "xmldom": false
   },
   "bin": {
     "query-overpass": "cli.js"
