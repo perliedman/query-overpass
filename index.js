@@ -81,5 +81,7 @@ module.exports = function(query, cb, options) {
             });
     }
 
+    r.on('error', cb);
+
     return r;
 };
