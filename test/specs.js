@@ -20,6 +20,15 @@ test('can execute basic query', function(t) {
     });
 });
 
+test('can not resolve overpass url', function(t) {
+    queryOverpass('[out:json];node(57.7,11.9,57.8,12.0)[amenity=bar];out;', function(err, geojson) {
+        t.ok(err, 'Should return an error');
+        t.equal(err.message, 'getaddrinfo ENOTFOUND unknown_domain unknown_domain:80', 'Should return the proper error message');
+        t.end();
+
+    }, { overpassUrl: 'http://unknown_domain/api/interpreter' });
+});
+
 test('can flatten properties', function(t) {
     queryOverpass('[out:json];node(57.7,11.9,57.8,12.0)[amenity=restaurant];out;', function(err, geojson) {
         if (err) {
