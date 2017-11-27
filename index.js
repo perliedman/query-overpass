@@ -61,6 +61,7 @@ module.exports = function(query, cb, options) {
                     });
                 }
             })
+            .on('error', cb);
     } else {
         r = request.post(options.overpassUrl || 'http://overpass-api.de/api/interpreter', reqOptions, 
             function (error, response, body) {
@@ -80,8 +81,6 @@ module.exports = function(query, cb, options) {
                 }
             });
     }
-
-    r.on('error', cb);
 
     return r;
 };
