@@ -20,10 +20,15 @@ install:
 $ npm install -g query-overpass
 ```
 
-use:
+use (Bash):
 
 ```bash
 $ echo 'node(57.7,11.9,57.8,12.0)[amenity=bar];out;' | query-overpass
+```
+
+use (Windows cmd):
+```bat
+$ echo node(57.7,11.9,57.8,12.0)[amenity=bar];out; | query-overpass
 ```
 
 Optionally, a file containing the query can be passed as the first argument:
