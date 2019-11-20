@@ -23,7 +23,7 @@ test('can execute basic query', function(t) {
 test('can not resolve overpass url', function(t) {
     queryOverpass('[out:json];node(57.7,11.9,57.8,12.0)[amenity=bar];out;', function(err, geojson) {
         t.ok(err, 'Should return an error');
-        t.equal(err.message, 'getaddrinfo ENOTFOUND unknown_domain unknown_domain:80', 'Should return the proper error message');
+        t.ok(err.message.includes('getaddrinfo ENOTFOUND unknown_domain'), 'Should return the proper error message');
         t.end();
 
     }, { overpassUrl: 'http://unknown_domain/api/interpreter' });
