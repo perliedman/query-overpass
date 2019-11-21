@@ -34,7 +34,7 @@ module.exports = function(query, cb, options) {
     var r;
 
     if (!global.window) {
-        r = request.post(options.overpassUrl || 'http://overpass-api.de/api/interpreter', reqOptions);
+        r = request.post(options.overpassUrl || 'https://overpass-api.de/api/interpreter', reqOptions);
 
         r
             .on('response', function(response) {
@@ -63,7 +63,7 @@ module.exports = function(query, cb, options) {
             })
             .on('error', cb);
     } else {
-        r = request.post(options.overpassUrl || 'http://overpass-api.de/api/interpreter', reqOptions, 
+        r = request.post(options.overpassUrl || 'https://overpass-api.de/api/interpreter', reqOptions, 
             function (error, response, body) {
                 if (!error && response.statusCode === 200) {
                     toGeoJSON(JSON.parse(body));

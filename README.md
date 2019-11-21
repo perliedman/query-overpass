@@ -50,7 +50,7 @@ You can also provide the URL where the Overpass API is located:
 $ query-overpass --overpass-url http://my.overpass-provider.org/
 ```
 
-The default is to use `http://overpass-api.de/api/interpreter`.
+The default is to use `https://overpass-api.de/api/interpreter`.
 
 You can also flatten each GeoJSON feature, making it more easily processable by other software and tools
 
@@ -85,5 +85,5 @@ no error occured. `data` will be the query response as an GeoJSON object.
 
 The options supported at the moment are
 
-* `overpassUrl`, which will default to `'http://overpass-api.de/api/interpreter'` unless specified.
+* `overpassUrl`, which will default to `'https://overpass-api.de/api/interpreter'` unless specified.
 * `flatProperties` which will default to `false`.
