@@ -29,7 +29,7 @@
     "osmtogeojson": "^2.2.12",
     "request": "^2.88.0",
     "xhr": "^2.4.0",
-    "xmldom": "^0.1.27"
+    "xmldom": "^0.2.0"
   },
   "devDependencies": {
     "faucet": "0.0.1",
