@@ -33,6 +33,6 @@
   },
   "devDependencies": {
     "faucet": "0.0.1",
-    "tape": "^5.0.0"
+    "tape": "^5.0.1"
   }
 }
