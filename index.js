@@ -3,7 +3,7 @@ var osmtogeojson = require('osmtogeojson'),
     request = require('request'),
     concat = require('concat-stream'),
     JSONStream = require('JSONStream'),
-    xmldom = require('xmldom')
+    xmldom = require('@xmldom/xmldom')
 
 module.exports = function(query, cb, options) {
     var contentType;
