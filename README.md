@@ -1,5 +1,3 @@
-## A few words on diversity in tech
-
 [![Greenkeeper badge](https://badges.greenkeeper.io/perliedman/query-overpass.svg)](https://greenkeeper.io/)
 
 # query-overpass [![NPM version](https://badge.fury.io/js/query-overpass.svg)](http://badge.fury.io/js/query-overpass) [![Build Status](https://travis-ci.org/perliedman/query-overpass.svg?branch=master)](https://travis-ci.org/perliedman/query-overpass)
